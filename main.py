@@ -148,7 +148,7 @@ def stand_alone_dict_to_class(msg_data: list[dict[str, str | list[str]]]) -> lis
                 fallback_msg=unidecode.unidecode(msg["fallback_msg"]),
                 url=None,
                 rcs_msg=StandaloneCard(
-                    card_orientation="HORIZONTAL",
+                    card_orientation="VERTICAL",
                     media_height="MEDIUM",
                     file_resource_id=f'{os.environ.get("STATIC_RCS_URL")}{msg["filename"]}',
                     title=msg["title"],
@@ -327,7 +327,7 @@ def main():
 
     print("Message List for EXCEL")
     for msg in msg_list:
-        print(f"{msg.id}|{msg.name}|{msg.fallback_msg}")
+        print(f"{msg.id}|{msg.name}")
 
 
 if __name__ == "__main__":
